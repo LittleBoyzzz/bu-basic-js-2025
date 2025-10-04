@@ -50,6 +50,37 @@
 
     <h2>Your solution for exercise</h2>
 
+    <input id="cheackbox" type="checkbox"/>
+    <input id="txtFristname" type="text" placeholder="Enter Firstname"/>
+    <input id="btnAdd" type="button" value="Add"/>
+    <input id="btnResetInput" type="button" value="Reset Input" onclick="resetInput();"/>
+    <input id="btnResetTable" type="button" value="Reset Table"/>
+
+    <table>
+        <thead>
+            <tr>
+                <td>First name</td>
+                <td>Last name</td>
+            </tr>
+        </thead>
+        <body>
+            <tr>
+                <td>Tar</td>
+                <td>4</td>
+            </tr>
+        </body>
+    </table>     
+
+    <script>
+        function resetInput(){
+            document.getElementById('txtFirstname').value ="";
+        }
+
+        function add(){
+            let firstname = document.getElementById('txtFirstname').value;
+            let lastname = document.getElementById('txtLastname').value;
+        }
+    </script>
 </body>
 
 </html>
