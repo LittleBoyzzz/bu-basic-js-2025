@@ -50,11 +50,11 @@
 
     <h2>Your solution for exercise</h2>
 
-    <input id="cheackbox" type="checkbox"/>
-    <input id="txtFristname" type="text" placeholder="Enter Firstname"/>
-    <input id="btnAdd" type="button" value="Add"/>
-    <input id="btnResetInput" type="button" value="Reset Input" onclick="resetInput();"/>
-    <input id="btnResetTable" type="button" value="Reset Table"/>
+    <input id="txtFirstname" type="text" placeholder="Enter first name."/>
+    <input id="txtLastname" type="text" placeholder="Enter Last name."/>
+    <input id="btAdd" type="button" value="Add" onclick="Addname()"/>
+    <input id="btReinput" type="button" value="Reset input" onclick="resetInput()"/>
+    <input id="btRetable" type="button" value="Reset table"onclick='resetTable()'/>
 
     <table>
         <thead>
@@ -63,24 +63,43 @@
                 <td>Last name</td>
             </tr>
         </thead>
-        <body>
+        <tbody>
             <tr>
-                <td>Tar</td>
-                <td>4</td>
+                <td>John</td>
+                <td>Smith</td>
             </tr>
-        </body>
-    </table>     
+        </tbody>
+    </table>
 
     <script>
         function resetInput(){
-            document.getElementById('txtFirstname').value ="";
+            document.getElementById('txtFirstname').value ='';
+            document.getElementById('txtLastname').value ='';
         }
-
-        function add(){
+        function Addname(){
             let firstname = document.getElementById('txtFirstname').value;
             let lastname = document.getElementById('txtLastname').value;
+            if (firstname === '' || lastname === '')
+            alert('Please enter firstname and lastname again.')
+            let tbody = document.querySelector('Table tbody')
+            let Newrow = document.createElement('tr')
+            let tdfirstname = document.createElement('td')
+            tdfirstname.textContent = firstname
+            let tdlastname = document.createElement('td')
+            tdlastname.textContent = lastname
+            Newrow.appendChild(tdfirstname)
+            Newrow.appendChild(tdlastname)
+            tbody.appendChild(Newrow)
+            document.getElementById('txtFirstname').value;
+            document.getElementById('txtLastname').value;
+            console.log('test')
         }
+        function resetTable() {
+            let tbody = document.querySelector('table tbody');
+            tbody.innerHTML = '';
+    }
     </script>
+
 </body>
 
 </html>
